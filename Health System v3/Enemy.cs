@@ -33,11 +33,15 @@ namespace Health_System_v3
 
         public void TakeDamage(int damage)
         {
-            health = health - damage;
-            if (health < 0)
-            {
-                health = 0;
-            }
+            
+           
+                health = health - damage;
+                if (health < 0)
+                {
+                    health = 0;
+                }
+
+            
 
         }
 
