@@ -72,6 +72,7 @@ namespace Health_System_v3
                 Console.WriteLine("-----------------");
                 Console.WriteLine("a - Attack");
                 Console.WriteLine("b - Run Away");
+                Console.WriteLine("c - debug menu");
                 Console.WriteLine();
 
 
@@ -131,6 +132,26 @@ namespace Health_System_v3
                     if (Input == "a") { Console.Clear(); Console.WriteLine("You have healed yourself"); player.Heal(); player.ShowHud(player); Console.ReadKey(true); }
                     if (Input == "b") { Console.Clear(); Console.WriteLine("Your shield has been regenerated"); player.RegenShield(); player.ShowHud(player); Console.ReadKey(true); };
                     
+
+                }
+                else if (Input == "c")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Which would you like to try?");
+                    Console.WriteLine("-----------------------------");
+                    Console.WriteLine();
+                    Console.WriteLine("a - Heal");
+                    Console.WriteLine("b - Regenerate Shield");
+                    Console.WriteLine("c - Take Damage");
+                    Console.WriteLine();
+                    Console.WriteLine("All options will also display Show Hud");
+
+                    Console.WriteLine();
+                    Input = Console.ReadLine();
+
+                    if (Input == "a") { Console.Clear(); player.TakeDamage(150); player.ShowHud(player); Console.WriteLine(); Console.WriteLine("You have healed yourself"); Console.WriteLine(); player.Heal(); player.ShowHud(player); Console.ReadKey(true); }
+                    if (Input == "b") { Console.Clear(); player.TakeDamage(50); player.ShowHud(player); Console.WriteLine(); Console.WriteLine("Your shield has been regenerated"); Console.WriteLine(); player.RegenShield(); player.ShowHud(player); Console.ReadKey(true); };
+                    if (Input == "c") { Console.Clear(); player.ShowHud(player); Console.WriteLine(); Console.WriteLine("You take 75 damage"); Console.WriteLine(); player.TakeDamage(75); player.ShowHud(player); Console.WriteLine(); Console.WriteLine("You take 75 more damage"); Console.WriteLine(); player.TakeDamage(75); player.ShowHud(player); Console.ReadKey(true); }
 
                 }
                 else

@@ -75,9 +75,7 @@ namespace Health_System_v3
         public void Heal()
         {
             health = health + (health / 2);
-            Console.WriteLine();
-            Console.WriteLine(health);
-            Console.WriteLine();
+            
             if (health >= 100)
             {
                 health = 100;
